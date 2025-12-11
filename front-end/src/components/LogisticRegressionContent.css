@@ -1,0 +1,348 @@
+/* Logistic Regression Article Styles */
+.logistic-regression-article {
+  --primary-dark: #1e1b4b;
+  --primary-mid: #3730a3;
+  --primary-light: #6366f1;
+  --accent: #818cf8;
+  --cream: #f5f5ff;
+  --surface: #ffffff;
+  --text-dark: #1e1b4b;
+  --text-mid: #4338ca;
+  --success: #10b981;
+  --danger: #ef4444;
+  --highlight: #e0e7ff;
+}
+
+.logistic-regression-article .article-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.logistic-regression-article .breadcrumb {
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.logistic-regression-article .article-header h1 {
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+
+.logistic-regression-article .subtitle {
+  color: var(--highlight);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.logistic-regression-article section {
+  margin-bottom: 3rem;
+}
+
+.logistic-regression-article h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.logistic-regression-article h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent));
+  border-radius: 2px;
+}
+
+.logistic-regression-article h3 {
+  color: var(--primary-mid);
+  margin: 1.5rem 0 1rem;
+}
+
+.logistic-regression-article h4 {
+  color: var(--text-dark);
+  margin: 0 0 0.75rem 0;
+}
+
+.logistic-regression-article p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Equation cards */
+.logistic-regression-article .equation-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
+  border-left: 4px solid var(--primary-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logistic-regression-article .equation-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.12);
+}
+
+.logistic-regression-article .equation-label {
+  font-weight: 600;
+  color: var(--primary-mid);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.logistic-regression-article .equation {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.logistic-regression-article .equation.small {
+  font-size: 0.95rem;
+}
+
+/* Sigmoid visualization */
+.logistic-regression-article .sigmoid-visualization {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
+  margin: 1.5rem 0;
+}
+
+.logistic-regression-article .sigmoid-svg {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Decision boundary visualization */
+.logistic-regression-article .decision-boundary-viz {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
+  margin: 1.5rem 0;
+}
+
+.logistic-regression-article .boundary-svg {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Data table */
+.logistic-regression-article .table-container {
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
+  margin: 1.5rem 0;
+}
+
+.logistic-regression-article .table-header {
+  background: var(--primary-mid);
+  color: var(--cream);
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.logistic-regression-article table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.logistic-regression-article th {
+  background: var(--highlight);
+  color: var(--primary-dark);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.logistic-regression-article td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.logistic-regression-article tr:hover td {
+  background: rgba(224, 231, 255, 0.3);
+}
+
+.logistic-regression-article .label-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.logistic-regression-article .label-pass {
+  background: var(--success);
+  color: white;
+}
+
+.logistic-regression-article .label-fail {
+  background: var(--danger);
+  color: white;
+}
+
+/* Code block */
+.logistic-regression-article .code-block {
+  background: var(--primary-dark);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.logistic-regression-article .code-header {
+  background: #312e81;
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logistic-regression-article .code-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.logistic-regression-article .code-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.logistic-regression-article .code-dot:nth-child(1) { background: #ff5f56; }
+.logistic-regression-article .code-dot:nth-child(2) { background: #ffbd2e; }
+.logistic-regression-article .code-dot:nth-child(3) { background: #27ca40; }
+
+.logistic-regression-article pre {
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.logistic-regression-article code {
+  font-family: 'Monaco', 'Consolas', monospace;
+  color: var(--highlight);
+}
+
+/* Callout */
+.logistic-regression-article .callout {
+  background: linear-gradient(135deg, var(--highlight) 0%, rgba(224, 231, 255, 0.5) 100%);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--accent);
+}
+
+.logistic-regression-article .callout.info {
+  background: linear-gradient(135deg, #f0fdf4 0%, rgba(240, 253, 244, 0.5) 100%);
+  border-left-color: var(--success);
+}
+
+.logistic-regression-article .callout-title {
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.logistic-regression-article .callout p {
+  margin: 0;
+  color: var(--text-mid);
+}
+
+.logistic-regression-article .callout ul {
+  margin: 0.5rem 0 0 1.5rem;
+  padding: 0;
+}
+
+.logistic-regression-article .callout li {
+  margin: 0.25rem 0;
+  color: var(--text-mid);
+}
+
+/* Regularization grid */
+.logistic-regression-article .regularization-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.logistic-regression-article .reg-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
+  border-top: 4px solid var(--primary-light);
+}
+
+.logistic-regression-article .reg-card h4 {
+  color: var(--primary-mid);
+}
+
+.logistic-regression-article .reg-card ul {
+  margin: 1rem 0 0 1.2rem;
+  padding: 0;
+}
+
+.logistic-regression-article .reg-card li {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+/* Metrics grid */
+.logistic-regression-article .metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.logistic-regression-article .metric-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
+  text-align: center;
+  border-bottom: 3px solid var(--primary-light);
+}
+
+.logistic-regression-article .metric-name {
+  font-weight: 700;
+  color: var(--primary-mid);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.logistic-regression-article .metric-formula {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.logistic-regression-article .metric-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}

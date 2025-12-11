@@ -1,0 +1,64 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+.tmp
+back-end/dist
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+back-end/.env
+back-end/prod-env.yaml
+
+# Firebase credentials (SENSITIVE - never commit)
+credentials.json
+back-end/credentials.json
+**/serviceAccountKey.json
+**/firebase-adminsdk*.json
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Coverage and testing
+coverage/
+.nyc_output/
+
+# Misc
+*.local
+.cache/
+
+# Personal files (not part of project)
+*.doc
+*.docx
+Alfredo_Alea_Resume*
+nul

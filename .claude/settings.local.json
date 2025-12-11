@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone:*)",
+      "Bash(git checkout:*)",
+      "Bash(npm install)",
+      "Bash(ls:*)",
+      "Bash(npx npm-check-updates:*)",
+      "Bash(npm run build:*)",
+      "Bash(mongod:*)",
+      "Bash(winget list:*)",
+      "Bash(winget search:*)",
+      "Bash(winget install:*)",
+      "Bash(\"/c/Program Files/MongoDB/Server/8.2/bin/mongod.exe\":*)",
+      "Bash(sc query:*)",
+      "Bash(net start:*)",
+      "Bash(\"/c/Program Files/MongoDB/Server/8.2/bin/mongosh.exe\":*)",
+      "Bash(\"/c/Program Files/mongosh/mongosh.exe\" --eval \"\nuse(''full-stack-react-db'');\ndb.articles.drop();\ndb.articles.insertMany([\n  { name: ''learn-react'', upvotes: 0, upvoteIds: [], comments: [] },\n  { name: ''learn-node'', upvotes: 0, upvoteIds: [], comments: [] },\n  { name: ''mongodb'', upvotes: 0, upvoteIds: [], comments: [] }\n]);\ndb.articles.find().toArray();\n\")",
+      "Bash(\"/c/Users/Alfredo/AppData/Local/Programs/mongosh/mongosh.exe\" --eval \"\nuse(''full-stack-react-db'');\ndb.articles.drop();\ndb.articles.insertMany([\n  { name: ''learn-react'', upvotes: 0, upvoteIds: [], comments: [] },\n  { name: ''learn-node'', upvotes: 0, upvoteIds: [], comments: [] },\n  { name: ''mongodb'', upvotes: 0, upvoteIds: [], comments: [] }\n]);\ndb.articles.find().toArray();\n\")",
+      "Bash(npm run dev:*)",
+      "Bash(\"C:\\Users\\Alfredo\\AppData\\Local\\Programs\\mongosh\\mongosh.exe\" --eval \"use(''full-stack-react-db''); db.articles.insertOne({ name: ''decision-trees'', upvotes: 0, upvoteIds: [], comments: [] })\")",
+      "Bash(\"C:\\Users\\Alfredo\\AppData\\Local\\Programs\\mongosh\\mongosh.exe\" --eval \"use(''full-stack-react-db''); db.articles.find().toArray()\")",
+      "Bash(curl:*)",
+      "Bash(taskkill:*)",
+      "Bash(timeout /t 2 /nobreak)",
+      "Bash(del \"c:\\Users\\Alfredo\\Desktop\\_desktop\\_it_training\\_projects\\_MERN_ReactJS_fullstack\\front-end\\src\\components\\RandomForestsContent.jsx\")",
+      "Bash(\"C:\\Users\\Alfredo\\AppData\\Local\\Programs\\mongosh\\mongosh.exe\" --eval \"use(''full-stack-react-db''); db.articles.insertOne({ name: ''logistic-regression'', upvotes: 0, upvoteIds: [], comments: [] })\")",
+      "Bash(\"C:\\Users\\Alfredo\\AppData\\Local\\Programs\\mongosh\\mongosh.exe\" --eval \"use(''full-stack-react-db''); db.articles.insertOne({ name: ''kmeans-clustering'', upvotes: 0, upvoteIds: [], comments: [] })\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
