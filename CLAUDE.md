@@ -1,6 +1,6 @@
 # Project Overview
 
-This is a MERN (MongoDB, Express, React, Node.js) fullstack blog application from the LinkedIn Learning course "React: Creating and Hosting a Full-Stack Site" by Shaun Wassell.
+This is a MERN (MongoDB, Express, React, Node.js) fullstack blog application for displaying and managing machine learning articles.
 
 ## Tech Stack
 
@@ -175,7 +175,7 @@ _MERN_ReactJS_fullstack/
 ## Progress Log
 
 - **2025-12-06:** Project initialized, CLAUDE.md created
-- **2025-12-08:** Cloned finished application from LinkedIn Learning repo (branch: 06_04_end)
+- **2025-12-08:** Initial application setup and structure
 - **2025-12-08:** Documented full project structure and setup instructions
 - **2025-12-09:** Set up Firebase authentication (project: mern-ai-blog-app)
 - **2025-12-09:** Upgraded all packages to latest versions (React 19, Express 5, etc.)

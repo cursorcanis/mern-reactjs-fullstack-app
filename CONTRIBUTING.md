@@ -1,7 +1,22 @@
+# Contributing
 
-Contribution Agreement
-======================
+This is a personal project by Alfredo Alea.
 
-This repository does not accept pull requests (PRs). All pull requests will be closed.
+## Forking
 
-However, if any contributions (through pull requests, issues, feedback or otherwise) are provided, as a contributor, you represent that the code you submit is your original work or that of your employer (in which case you represent you have the right to bind your employer). By submitting code (or otherwise providing feedback), you (and, if applicable, your employer) are licensing the submitted code (and/or feedback) to LinkedIn and the open source community subject to the BSD 2-Clause license.
+Feel free to fork this repository and modify it for your own use. If you do:
+- Update the author information in package.json and README.md
+- Configure your own Firebase and AWS credentials
+- Deploy to your own infrastructure
+
+## Issues
+
+If you encounter bugs or have suggestions, feel free to open an issue on GitHub.
+
+## Pull Requests
+
+This repository does not accept pull requests at this time, as it is a personal project.
+
+## License
+
+By contributing (through issues or any other means), you agree that any contributions are provided under the MIT License.

@@ -1,17 +1,17 @@
 {
-  "name": "back-end",
+  "name": "ml-articles-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon src/server.js",
     "start": "node src/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["mern", "blog", "machine-learning", "api", "express", "mongodb"],
+  "author": "Alfredo Alea",
+  "license": "MIT",
+  "description": "Backend API for ML Articles Blog - A MERN stack application",
   "dependencies": {
     "express": "^5.2.1",
     "firebase-admin": "^13.6.0",

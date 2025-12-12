@@ -1,43 +1,108 @@
-# React: Creating and Hosting a Full-Stack Site
-This is the repository for the LinkedIn Learning course `React: Creating and Hosting a Full-Stack Site`. The full course is available from [LinkedIn Learning][lil-course-url].
+# MERN ML Articles Blog Application
 
-![lil-thumbnail-url]
+A fullstack blog application for displaying and managing machine learning articles, built with the MERN stack (MongoDB, Express, React, Node.js).
 
-## Course Description
+## Author
 
-You've learned React and can create amazing front-end interfaces. But deploying them requires more. You need logic—and a place to put it. By combining your front-end UI with a back-end solution and cloud hosting, you can build powerful and interactive full-stack applications. In this project-based course, Shaun Wassell shows how to combine React, Node.js, and Amazon Web Services (AWS) in a full-stack, full-featured website, including user-friendly forms for posting articles and comments. Learn how to create an interface from React components, develop a Node.js server, tie in a MongoDB database, add user authentication with Firebase Auth, and deploy your site on Amazon Web Services. Join Shaun in this course to gain the skills to take your client services to the next level: full-stack web applications that are truly interactive.
+**Alfredo Alea**
 
-_See the readme file in the main branch for updated instructions and information._
-## Instructions
-This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
+## Features
 
-## Branches
-The branches are structured to correspond to the videos in the course. The naming convention is `CHAPTER#_MOVIE#`. As an example, the branch named `02_03` corresponds to the second chapter and the third video in that chapter. 
-Some branches will have a beginning and an end state. These are marked with the letters `b` for "beginning" and `e` for "end". The `b` branch contains the code as it is at the beginning of the movie. The `e` branch contains the code as it is at the end of the movie. The `main` branch holds the final state of the code when in the course.
+- View and read machine learning articles
+- User authentication with Firebase
+- Upvote articles (authenticated users)
+- Comment on articles (authenticated users)
+- Responsive single-page application
+- RESTful API backend
+- Cloud deployment on AWS
 
-When switching from one exercise files branch to the next after making changes to the files, you may get a message like this:
+## Tech Stack
 
-    error: Your local changes to the following files would be overwritten by checkout:        [files]
-    Please commit your changes or stash them before you switch branches.
-    Aborting
+### Frontend
+- React 19.2.1
+- Vite 7.2.7
+- React Router DOM 7.10
+- Axios 1.13.2
+- Firebase 12.6.0
 
-To resolve this issue:
-	
-    Add changes to git using this command: git add .
-	Commit changes using this command: git commit -m "some message"
+### Backend
+- Node.js with ES Modules
+- Express 5.2.1
+- MongoDB 7.0.0
+- Firebase Admin 13.6.0
 
-## Instructor
+### Deployment
+- AWS S3 + CloudFront (frontend)
+- AWS App Runner (backend)
+- MongoDB Atlas (database)
+- AWS Route 53 (DNS)
+- AWS Certificate Manager (SSL)
 
-Shaun Wassell
+## Getting Started
 
-Senior Software Engineer, Educator at CBT Nuggets
+### Prerequisites
 
-                            
+- Node.js 18+ installed
+- MongoDB 8.2+ installed locally or MongoDB Atlas account
+- Firebase project with Authentication enabled
+- AWS account (for deployment)
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/shaun-wassell?u=104).
+### Installation
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/cursorcanis/mern-reactjs-fullstack-app.git
+   cd mern-reactjs-fullstack-app
+   ```
 
-[lil-course-url]: https://www.linkedin.com/learning/react-creating-and-hosting-a-full-stack-site-24928483
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D560DAQEfNuCrg9Guag/learning-public-crop_675_1200/learning-public-crop_675_1200/0/1729814684031?e=2147483647&v=beta&t=r1ECRhP36-BCey_Ah1RHQnxPbNdZG6D5VeYUCEHqjdw
+2. Install dependencies:
+   ```bash
+   cd front-end && npm install
+   cd ../back-end && npm install
+   ```
 
+3. Set up Firebase:
+   - Create a Firebase project
+   - Enable Authentication (Email/Password)
+   - Download service account credentials as `credentials.json` in `back-end/`
+   - Configure Firebase in `front-end/src/main.jsx`
+
+4. Set up MongoDB:
+   ```javascript
+   // In MongoDB shell (mongosh):
+   use('full-stack-react-db');
+   db.articles.insertMany([
+     { name: 'decision-trees', upvotes: 0, upvoteIds: [], comments: [] },
+     { name: 'logistic-regression', upvotes: 0, upvoteIds: [], comments: [] },
+     { name: 'kmeans-clustering', upvotes: 0, upvoteIds: [], comments: [] }
+   ])
+   ```
+
+5. Run the development servers:
+   ```bash
+   # Terminal 1 - Backend (port 8000)
+   cd back-end && npm run dev
+
+   # Terminal 2 - Frontend (port 5173)
+   cd front-end && npm run dev
+   ```
+
+## API Endpoints
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/api/articles/:name` | Get article by name | No |
+| POST | `/api/articles/:name/upvote` | Upvote an article | Yes |
+| POST | `/api/articles/:name/comments` | Add comment to article | Yes |
+
+## Deployment
+
+See [AWS_DEPLOYMENT_GUIDE.md](AWS_DEPLOYMENT_GUIDE.md) for detailed deployment instructions to AWS.
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+This is a personal project. Feel free to fork and modify for your own use.

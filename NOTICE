@@ -1,12 +1,19 @@
-Copyright 2024 LinkedIn Corporation
-All Rights Reserved.
+MERN ML Articles Blog Application
+Copyright (c) 2025 Alfredo Alea
 
-Licensed under the LinkedIn Learning Exercise File License (the "License").
-See LICENSE in the project root for license information.
+This project uses the following open source packages:
 
-Please note, this project may automatically load third party code from external 
-repositories (for example, NPM modules, Composer packages, or other dependencies). 
-If so, such third party code may be subject to other license terms than as set 
-forth above. In addition, such third party code may also depend on and load 
-multiple tiers of dependencies. Please review the applicable licenses of the 
-additional dependencies.
+Frontend Dependencies:
+- React (MIT License)
+- Vite (MIT License)
+- React Router DOM (MIT License)
+- Axios (MIT License)
+- Firebase (Apache 2.0 License)
+
+Backend Dependencies:
+- Express (MIT License)
+- MongoDB (Apache 2.0 License)
+- Firebase Admin (Apache 2.0 License)
+
+Please see package.json files in front-end and back-end directories for
+complete dependency information and their respective licenses.
