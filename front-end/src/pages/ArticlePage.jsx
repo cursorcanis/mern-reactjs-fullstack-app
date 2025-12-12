@@ -8,6 +8,7 @@ import useUser from '../useUser';
 import DecisionTreesContent from '../components/DecisionTreesContent';
 import LogisticRegressionContent from '../components/LogisticRegressionContent';
 import KMeansClusteringContent from '../components/KMeansClusteringContent';
+import { API_URL } from '../config';
 
 export default function ArticlePage() {
   const { name } = useParams();
@@ -22,7 +23,7 @@ export default function ArticlePage() {
   async function onUpvoteClicked() {
     const token = user && await user.getIdToken();
     const headers = token ? { authtoken: token } : {};
-    const response = await axios.post('/api/articles/' + name + '/upvote', null, { headers });
+    const response = await axios.post(`${API_URL}/api/articles/${name}/upvote`, null, { headers });
     const updatedArticleData = response.data;
     setUpvotes(updatedArticleData.upvotes);
   }
@@ -30,7 +31,7 @@ export default function ArticlePage() {
   async function onAddComment({ nameText, commentText }) {
     const token = user && await user.getIdToken();
     const headers = token ? { authtoken: token } : {};
-    const response = await axios.post('/api/articles/' + name + '/comments', {
+    const response = await axios.post(`${API_URL}/api/articles/${name}/comments`, {
       postedBy: nameText,
       text: commentText,
     }, { headers });
@@ -72,7 +73,8 @@ export default function ArticlePage() {
 }
 
 export async function loader({ params }) {
-  const response = await axios.get('/api/articles/' + params.name);
+  const API_URL = import.meta.env.PROD ? 'https://api.aleaportfolio.com' : '';
+  const response = await axios.get(`${API_URL}/api/articles/${params.name}`);
   const { upvotes, comments } = response.data;
   return { upvotes, comments };
 }

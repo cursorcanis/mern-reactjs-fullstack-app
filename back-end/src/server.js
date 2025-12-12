@@ -8,9 +8,13 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const credentials = JSON.parse(
-  fs.readFileSync('./credentials.json')
-);
+// Support both file-based credentials (local) and environment variable (production)
+let credentials;
+if (process.env.FIREBASE_CREDENTIALS) {
+  credentials = JSON.parse(process.env.FIREBASE_CREDENTIALS);
+} else {
+  credentials = JSON.parse(fs.readFileSync('./credentials.json'));
+}
 
 admin.initializeApp({
   credential: admin.credential.cert(credentials)
@@ -18,14 +22,40 @@ admin.initializeApp({
 
 const app = express();
 
+// CORS middleware
+app.use((req, res, next) => {
+  const allowedOrigins = [
+    'https://aleaportfolio.com',
+    'https://www.aleaportfolio.com',
+    'https://d2zq5bn4pmn9kz.cloudfront.net',
+    'http://localhost:5173' // for local development
+  ];
+
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, authtoken');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
 app.use(express.json());
 
 let db;
 
 async function connectToDB() {
-  const uri = !process.env.MONGODB_USERNAME
-    ? 'mongodb://127.0.0.1:27017'
-    : `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.zplzm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+  const uri = process.env.MONGODB_URI
+    || (process.env.MONGODB_USERNAME
+      ? `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.zplzm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+      : 'mongodb://127.0.0.1:27017');
 
   const client = new MongoClient(uri, {
     serverApi: {
@@ -39,12 +69,6 @@ async function connectToDB() {
 
   db = client.db('full-stack-react-db');
 }
-
-app.use(express.static(path.join(__dirname, '../dist')))
-
-app.get(/^(?!\/api).+/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/index.html'));
-});
 
 app.get('/api/articles/:name', async (req, res) => {
   const { name } = req.params;
