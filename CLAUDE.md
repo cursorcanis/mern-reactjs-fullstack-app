@@ -172,6 +172,51 @@ _MERN_ReactJS_fullstack/
 - Use AWS Parameter Store for environment variables
 - Configure VPC for secure database access
 
+## Deployment Workflow
+
+### Quick Deploy Commands
+
+For **Windows (PowerShell)**:
+```powershell
+# Deploy frontend only
+.\deploy-frontend.ps1
+
+# Deploy backend only
+.\deploy-backend.ps1
+
+# Deploy everything
+.\deploy-all.ps1
+```
+
+For **Linux/Mac (Bash)**:
+```bash
+# Deploy frontend only
+./deploy-frontend.sh
+
+# Deploy backend only
+./deploy-backend.sh
+
+# Deploy everything
+./deploy-all.sh
+```
+
+### AWS Resources
+
+**Frontend:**
+- S3 Bucket: `aleaportfolio-frontend`
+- CloudFront Distribution: `E25X4TT6CY4C3` (d3n0lhva74il6k.cloudfront.net)
+- Domains: https://aleaportfolio.com, https://www.aleaportfolio.com
+
+**Backend:**
+- ECR Repository: `ml-articles-backend`
+- App Runner Service: `ml-articles-backend`
+- CloudFront Distribution: `E2XAAFMAKV81GJ` (d2w3j0z3xhs9zw.cloudfront.net)
+- Domain: https://api.aleaportfolio.com
+
+**Database:**
+- MongoDB Atlas Cluster: `Cluster0`
+- Database: `full-stack-react-db`
+
 ## Progress Log
 
 - **2025-12-06:** Project initialized, CLAUDE.md created
@@ -181,6 +226,10 @@ _MERN_ReactJS_fullstack/
 - **2025-12-09:** Upgraded all packages to latest versions (React 19, Express 5, etc.)
 - **2025-12-09:** Installed MongoDB 8.2.2 locally, initialized database
 - **2025-12-09:** Added AWS deployment plan and notes
+- **2025-12-12:** Removed LinkedIn Learning copyright, updated to MIT License (Author: Alfredo Alea)
+- **2025-12-12:** Successfully deployed to AWS (S3, CloudFront, App Runner)
+- **2025-12-12:** Site live at https://aleaportfolio.com and https://api.aleaportfolio.com
+- **2025-12-12:** Created deployment scripts (deploy-frontend, deploy-backend, deploy-all)
 
 ## Key Decisions
 
